@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Camilo Espinosa | Operations Director</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #030305;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+            --neon-blue: #00f3ff;
+            --neon-purple: #bc13fe;
+            --text: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Tech Blueprint Watermark */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            background: url('images/cv_watermark.png') center center no-repeat;
+            background-size: 80%;
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 1;
+            filter: invert(1) brightness(2);
+        }
+
+        /* HERO VIDEO BACKGROUND */
+        .hero {
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+            z-index: 0;
+            filter: contrast(1.2) brightness(0.8);
+        }
+
+        .overlay {
+            z-index: 2;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            box-shadow: 0 0 50px rgba(188, 19, 254, 0.1);
+            max-width: 900px;
+        }
+
+        h1 {
+            font-size: 4rem;
+            line-height: 0.9;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #fff, var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        p.subtitle {
+            font-size: 1.5rem;
+            color: #ccc;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .tagline {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            color: #ddd;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .btn-main {
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            background: transparent;
+            border: 1px solid var(--neon-purple);
+            color: var(--neon-purple);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .btn-main:hover {
+            background: var(--neon-purple);
+            color: #000;
+            box-shadow: 0 0 30px var(--neon-purple);
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--neon-blue);
+            text-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            transition: 0.4s;
+            height: 380px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--neon-purple);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .card:hover .card-bg {
+            opacity: 0.2;
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px;
+            background: linear-gradient(to top, #000 20%, transparent);
+            z-index: 2;
+        }
+
+        .card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: var(--neon-blue);
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #ddd;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        .skills-list li {
+            display: inline-block;
+            background: rgba(188, 19, 254, 0.2);
+            border: 1px solid rgba(188, 19, 254, 0.4);
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            margin: 3px;
+        }
+
+        /* CONTACT FOOTER */
+        footer {
+            min-height: 400px;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 50px 20px;
+        }
+
+        .contact-box {
+            z-index: 2;
+            text-align: center;
+            border: 1px solid var(--neon-blue);
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            p.subtitle {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <div class="hero">
+        <video class="video-bg" autoplay muted loop playsinline poster="images/cv_intro_eye_1765352245536.png">
+            <source src="images/cv_intro_eye_1765352245536.mp4" type="video/mp4">
+        </video>
+        <div class="overlay">
+            <h1>Juan Camilo Espinosa</h1>
+            <p class="subtitle">DIRECTOR DE OPERACIONES | SECCIONAL COLOMBIA</p>
+            <div class="tagline">
+                "Gestor de Desarrollo de Clientes impulsando la transformación digital y la expansión estratégica de
+                ORION Tech."
+            </div>
+            <a href="#experience" class="btn-main">VER EXPERIENCIA</a>
+        </div>
+    </div>
+
+    <!-- EXPERIENCE & SKILLS -->
+    <div class="section" id="experience">
+        <h2 class="section-title">PERFIL PROFESIONAL</h2>
+        <div class="grid">
+
+            <!-- ORION TECH -->
+            <div class="card">
+                <video class="card-bg" autoplay muted loop playsinline
+                    poster="images/capability_ai_brain_1765573234371.png">
+                    <source src="images/capability_ai_brain_1765573234371.mp4" type="video/mp4">
+                </video>
+                <div class="card-content">
+                    <h3>ORION TECH</h3>
+                    <p style="color: var(--neon-purple); font-weight: bold;">Director de Operaciones - Cap. Colombia</p>
+                    <p>Liderazgo de estrategias de expansión, gestión de clientes y coordinación de proyectos
+                        tecnológicos.</p>
+                    <ul class="skills-list">
+                        <li>Gestión de Clientes</li>
+                        <li>Estrategia Comercial</li>
+                        <li>Coordinación de Operaciones</li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+            <!-- EDUCATION -->
+            <div class="card">
+                <video class="card-bg" autoplay muted loop playsinline
+                    poster="images/capability_automation_1765573271380.png">
+                    <source src="images/capability_automation_1765573271380.mp4" type="video/mp4">
+                </video>
+                <div class="card-content">
+                    <h3>FORMACIÓN ACADÉMICA</h3>
+                    <p>Estudiante de Administración de Empresas - Universidad del Valle (6to Semestre).</p>
+                    <p>Enfoque en gestión administrativa y desarrollo de negocios.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- TECHNICAL DEVELOPMENT (NEW SECTION) -->
+    <div class="section" id="tech-stack">
+        <h2 class="section-title">DESARROLLO TÉCNICO</h2>
+        <div class="grid">
+
+            <!-- PROGRAMMING -->
+            <div class="card">
+                <video class="card-bg" autoplay muted loop playsinline
+                    poster="images/capability_automation_1765573271380.png">
+                    <source src="images/capability_automation_1765573271380.mp4" type="video/mp4">
+                </video>
+                <div class="card-content">
+                    <h3>PROGRAMACIÓN & LÓGICA</h3>
+                    <p>Fundamentos sólidos en lenguajes estructurados y orientados a objetos.</p>
+                </div>
+            </div>
+
+            <!-- WEB DEV -->
+            <div class="card">
+                <video class="card-bg" autoplay muted loop playsinline
+                    poster="images/capability_web_platform_1765573194485.png">
+                    <source src="images/capability_web_platform_1765573194485.mp4" type="video/mp4">
+                </video>
+                <div class="card-content">
+                    <h3>DESARROLLO WEB</h3>
+                    <p>Creación de sitios estáticos y aplicaciones web funcionales de bajo consumo.</p>
+                </div>
+            </div>
+
+            <!-- TOOLS -->
+            <div class="card">
+                <video class="card-bg" autoplay muted loop playsinline poster="images/cv_digital_ops_1765352273224.png">
+                    <source src="images/cv_digital_ops_1765352273224.mp4" type="video/mp4">
+                </video>
+                <div class="card-content">
+                    <h3>HERRAMIENTAS DEV</h3>
+                    <p>Manejo de entornos de desarrollo ligeros y eficientes.</p>
+                </div>
+            </div>
+
+            <!-- INFRASTRUCTURE -->
+            <div class="card">
+                <video class="card-bg" autoplay muted loop playsinline
+                    poster="images/capability_mobile_systems_1765573258112.png">
+                    <source src="images/capability_mobile_systems_1765573258112.mp4" type="video/mp4">
+                </video>
+                <div class="card-content">
+                    <h3>INFRAESTRUCTURA</h3>
+                    <p>Administración de servidores locales y sistemas de bajo nivel.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <footer>
+        <video class="video-bg" autoplay muted loop playsinline poster="images/capability_247_ops_1765573285705.png">
+            <source src="images/capability_247_ops_1765573285705.mp4" type="video/mp4">
+        </video>
+        <div class="contact-box">
+            <h2 style="color: var(--neon-blue); margin-bottom: 20px;">CONTACTO DIRECTO</h2>
+
+            <!-- WhatsApp -> ORION BOT -->
+            <a href="https://wa.me/573245143926" class="btn-main"
+                style="display:flex; align-items:center; justify-content:center; gap:10px; margin: 10px auto; width: 100%; border-color: #25D366; color: #25D366;">
+                <video src="images/orion_bot.mp4" autoplay muted loop playsinline
+                    style="width: 35px; height: 35px; border-radius: 50%; filter: drop-shadow(0 0 5px #00f3ff);"></video>
+                WHATSAPP (+57)
+            </a>
+
+            <!-- Email -> JARVIS -->
+            <a href="mailto:jcamilo.espinosa26@gmail.com" class="btn-main"
+                style="display:flex; align-items:center; justify-content:center; gap:10px; margin: 10px auto; width: 100%; border-color: #bc13fe; color: #bc13fe;">
+                <video src="images/jarvis_email.mp4" autoplay muted loop playsinline
+                    style="width: 35px; height: 35px; border-radius: 50%; filter: drop-shadow(0 0 5px #bc13fe);"></video>
+                EMAIL
+            </a>
+
+            <!-- Telegram -> ALEX CEO -->
+            <a href="https://t.me/+573245143926" class="btn-main"
+                style="display:flex; align-items:center; justify-content:center; gap:10px; margin: 10px auto; width: 100%; border-color: #0088cc; color: #0088cc;">
+                <video src="images/alex_ceo.mp4" autoplay muted loop playsinline
+                    style="width: 35px; height: 35px; border-radius: 50%;"></video>
+                TELEGRAM
+            </a>
+
+            <div style="margin-top: 30px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                <video src="images/orion_logo_2090.mp4" autoplay muted loop playsinline style="width: 40px;"></video>
+                <span style="color: #fff; letter-spacing: 2px;">ORION TECH COLOMBIA</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

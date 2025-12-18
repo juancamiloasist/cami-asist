@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Camilo Espinosa | Digital Card</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #000;
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .card-container {
+            width: 100%;
+            max-width: 400px;
+            background: #111;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(188, 19, 254, 0.2);
+            position: relative;
+        }
+
+        .header-video {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
+
+        .content {
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            top: -50px;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #bc13fe;
+            background: #222;
+            margin: 0 auto 20px;
+            object-fit: cover;
+            box-shadow: 0 0 30px rgba(188, 19, 254, 0.5);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        .title {
+            color: #888;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+            text-transform: uppercase;
+            box-sizing: border-box;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #00f3ff, #bc13fe);
+            color: #000;
+            border: none;
+            box-shadow: 0 5px 20px rgba(188, 19, 254, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* ORION Floating Badge */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card-container">
+        <!-- New Header: Digital Ops -->
+        <video class="header-video" autoplay muted loop playsinline poster="images/cv_digital_ops_1765352273224.png">
+            <source src="images/cv_digital_ops_1765352273224.mp4" type="video/mp4">
+        </video>
+
+        <div class="content">
+            <!-- Video Profile (Using ORION Logo) -->
+            <video src="images/orion_logo_2090.mp4" autoplay muted loop playsinline class="profile-pic"></video>
+
+            <h1>Juan Camilo Espinosa</h1>
+            <p class="title">Director de Operaciones | Seccional Colombia</p>
+
+            <!-- WhatsApp -> ORION BOT Video -->
+            <a href="https://wa.me/573245143926" class="btn btn-secondary"
+                style="background: rgba(37,211,102,0.1); border-color: #25D366; color: #25D366;">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                    <video src="images/orion_bot.mp4" autoplay muted loop playsinline
+                        style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover; filter: drop-shadow(0 0 5px #00f3ff);"></video>
+                    <span>WHATSAPP: +57 324 514 3926</span>
+                </div>
+            </a>
+
+            <!-- Telegram -> ALEX CEO Video -->
+            <a href="https://t.me/+573245143926" class="btn btn-secondary"
+                style="background: rgba(0,136,204,0.1); border-color: #0088cc; color: #0088cc;">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                    <video src="images/alex_ceo.mp4" autoplay muted loop playsinline
+                        style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover;"></video>
+                    <span>TELEGRAM</span>
+                </div>
+            </a>
+
+            <!-- ORION TECH CONNECTION (Repurposed) -->
+            <a href="https://agem2024.github.io/SEGURITI-USC/orion-bots.html" class="btn btn-primary"
+                style="background: linear-gradient(90deg, #bc13fe, #00f3ff); border: none; color: #fff; box-shadow: 0 0 15px rgba(188,19,254,0.5);">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                    <video src="images/orion_logo_2090.mp4" autoplay muted loop playsinline
+                        style="width: 30px; height: 30px; filter: contrast(2);"></video>
+                    <span>SITIO OFICIAL ORION TECH</span>
+                </div>
+            </a>
+
+            <!-- CV CONNECTION (New) -->
+            <a href="cv.html" class="btn btn-secondary"
+                style="background: rgba(0,243,255,0.1); border-color: #00f3ff; color: #00f3ff; margin-top: 10px;">
+                VER HOJA DE VIDA COMPLETA
+            </a>
+
+            <!-- Guardar Contacto (Secondary) -->
+            <a href="#" onclick="downloadVCard()"
+                style="color: #666; text-decoration: none; font-size: 0.8rem; display: block; margin-top: 15px;">
+                Guardar en Contactos (vCard)
+            </a>
+        </div>
+    </div>
+
+    <!-- ORION Tech Floating Badge -->
+    <a href="cv.html"
+        style="position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: linear-gradient(135deg, #bc13fe, #00f3ff); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 0 25px rgba(188,19,254,0.6); z-index: 1000; transition: transform 0.3s, box-shadow 0.3s; animation: float 3s ease-in-out infinite;"
+        title="Ver CV">
+        <video src="images/orion_logo_2090.mp4" autoplay muted loop playsinline
+            style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></video>
+    </a>
+
+    <script>
+        function downloadVCard() {
+            const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:Juan Camilo Espinosa
+ORG:ORION Tech
+TITLE:Director de Operaciones Seccional Colombia
+TEL:+573245143926
+EMAIL:jcamilo.espinosa26@gmail.com
+URL:https://www.linkedin.com/in/juan-camilo-espinosa26/
+NOTE:Gestor de Desarrollo de Clientes | ORION Tech Colombia
+END:VCARD`;
+
+            const blob = new Blob([vcard], { type: 'text/vcard' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Juan_Camilo_Espinosa.vcf';
+            a.click();
+        }
+    </script>
+
+</body>
+
+</html>

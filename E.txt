@@ -1,0 +1,48 @@
+CORREOS:
+cronos.evo01@gmail.com
+Cronos_Evo26
+
+cronos.evo02@gmail.com 
+Cronos_Evo26
+
+Zzzcronos26@gmail.com
+Cronos_Evo26
+
+adoniscronos26@gmail.com
+Cronos_Evo26
+
+INFORMACIÓN:
+Juan Camilo Espinosa
+Gestor de Desarrollo de Clientes
+Estudiante de Administración de Empresas — Universidad del Valle (sexto semestre)
+📞 +57 3245143926 📧 jcamilo.espinosa26@gmail.com 🔗 https://www.linkedin.com/in/juan-camilo-espinosa26/
+
+El PC SIRVE PARA:
+Programación básica:
+- Python básico
+- C
+- Java (con IDE ligero)
+- HTML, CSS, JavaScript básico
+- SQL (bases de datos pequeñas)
+
+Herramientas:
+- VS Code (con pocas extensiones)
+- Notepad++
+- Sublime Text
+- Compiladores por consola
+
+Desarrollo Web:
+- Páginas estáticas
+- Frontend básico sin frameworks pesados
+- Backend simple (PHP, Flask, Node muy liviano)
+
+Servidor local:
+- Servidor local de pruebas
+- Servidor Apache / Nginx
+- Servidor FTP
+- Servidor de base de datos pequeño (MySQL / SQLite)
+
+Desarrollo de nivel bajo:
+- Programación C
+- Emuladores antiguos
+- Proyectos tipo Arduino (solo IDE y compilación)
