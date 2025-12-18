@@ -106,6 +106,17 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "O simplemente hábleme en lenguaje natural."
     )
 
+async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "📋 **COMANDOS CRONOS**\n\n"
+        "/start - Iniciar bot\n"
+        "/cv - Ver Hoja de Vida\n"
+        "/tj - Ver Tarjeta Digital\n"
+        "/agenda - Ver calendario\n"
+        "/agendar [evento] - Agregar evento\n\n"
+        "💡 También puedo responder en lenguaje natural."
+    )
+
 # --- GESTIÓN DE AGENDA ---
 
 async def add_event(update: Update, context: ContextTypes.DEFAULT_TYPE):
