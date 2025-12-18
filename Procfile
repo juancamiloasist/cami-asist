@@ -1,1 +1,1 @@
-worker: python cronos_bot/cronos.py
+worker: python cronos.py
